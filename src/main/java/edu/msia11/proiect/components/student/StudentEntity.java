@@ -4,12 +4,31 @@ package edu.msia11.proiect.components.student;
 * sub forma unei clase Java */
 public class StudentEntity {
     private String numarMatricol;
-    private String Nume;
-    private String Prenume;
+    private String nume;
+    private String prenume;
     private long cnp;
     private String adresaDomiciliu;
     private String serieBuletin;
-    private int sumarBuletin;
+    private int numarBuletin;
+
+    public StudentEntity(String numarMatricol,
+                         String nume,
+                         String prenume,
+                         long cnp,
+                         String adresaDomiciliu,
+                         String serieBuletin,
+                         int numarBuletin) {
+        this.numarMatricol = numarMatricol;
+        this.nume = nume;
+        this.prenume = prenume;
+        this.cnp = cnp;
+        this.adresaDomiciliu = adresaDomiciliu;
+        this.serieBuletin = serieBuletin;
+        this.numarBuletin = numarBuletin;
+    }
+
+    public StudentEntity() {
+    }
 
     public String getNumarMatricol() {
         return numarMatricol;
@@ -20,19 +39,19 @@ public class StudentEntity {
     }
 
     public String getNume() {
-        return Nume;
+        return nume;
     }
 
     public void setNume(String nume) {
-        Nume = nume;
+        this.nume = nume;
     }
 
     public String getPrenume() {
-        return Prenume;
+        return prenume;
     }
 
     public void setPrenume(String prenume) {
-        Prenume = prenume;
+        this.prenume = prenume;
     }
 
     public long getCnp() {
@@ -59,11 +78,11 @@ public class StudentEntity {
         this.serieBuletin = serieBuletin;
     }
 
-    public int getSumarBuletin() {
-        return sumarBuletin;
+    public int getNumarBuletin() {
+        return numarBuletin;
     }
 
-    public void setSumarBuletin(int sumarBuletin) {
-        this.sumarBuletin = sumarBuletin;
+    public void setNumarBuletin(int numarBuletin) {
+        this.numarBuletin = numarBuletin;
     }
 }
