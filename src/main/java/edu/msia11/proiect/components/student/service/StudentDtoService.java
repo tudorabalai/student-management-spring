@@ -10,8 +10,6 @@ import java.util.List;
 /* Acest serviciu se ocupa strict de manipularea claselor
  * de tip DTO (Data Transfer Object) de tip student.
  * Totodata, aici servim datele catre controller sub forma Output */
-@Service
-@Transactional
 public interface StudentDtoService {
 
     List<StudentOutputDTO> getAllObjects();

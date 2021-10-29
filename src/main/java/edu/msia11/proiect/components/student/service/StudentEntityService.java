@@ -13,8 +13,6 @@ import java.util.List;
 * de tip entitate de tip student.
 * Totodata, aici preluam sau servim date catre/din Serviciul DTO sub forma Entitate
 * precum si interfatarea cu repository-ul */
-@Service
-@Transactional
 public interface StudentEntityService {
 
     List<StudentEntity> getAllEntities();
