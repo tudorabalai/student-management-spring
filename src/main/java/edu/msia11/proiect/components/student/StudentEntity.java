@@ -1,88 +1,52 @@
 package edu.msia11.proiect.components.student;
 
+import edu.msia11.proiect.components.student.service.StudentEntityService;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.util.List;
+
 /* Entitatea este reprezentarea unei tabele din baza de date
-* sub forma unei clase Java */
+ * sub forma unei clase Java */
+@Getter
+@Setter
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "Student_Entity")
 public class StudentEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    //    @NonNull
+    @Column(name = "CNP")
+    private Long codNumericPersonal;
+
+    @Column(name = "Numar_CI")
+    private Integer numarCarteIdentitate;
+
+    @Column(name = "Serie_CI")
+    private String serieCarteIdentitate;
+
+    @Column(name = "Matricol")
     private String numarMatricol;
+
+    @Column(name = "Nume")
     private String nume;
+
+    @Column(name = "Prenume")
     private String prenume;
-    private long cnp;
+
+    @Column(name = "Adresa")
     private String adresaDomiciliu;
-    private String serieBuletin;
-    private int numarBuletin;
-
-    public StudentEntity(String numarMatricol,
-                         String nume,
-                         String prenume,
-                         long cnp,
-                         String adresaDomiciliu,
-                         String serieBuletin,
-                         int numarBuletin) {
-        this.numarMatricol = numarMatricol;
-        this.nume = nume;
-        this.prenume = prenume;
-        this.cnp = cnp;
-        this.adresaDomiciliu = adresaDomiciliu;
-        this.serieBuletin = serieBuletin;
-        this.numarBuletin = numarBuletin;
-    }
-
-    public StudentEntity() {
-    }
-
-    public String getNumarMatricol() {
-        return numarMatricol;
-    }
-
-    public void setNumarMatricol(String numarMatricol) {
-        this.numarMatricol = numarMatricol;
-    }
-
-    public String getNume() {
-        return nume;
-    }
-
-    public void setNume(String nume) {
-        this.nume = nume;
-    }
-
-    public String getPrenume() {
-        return prenume;
-    }
-
-    public void setPrenume(String prenume) {
-        this.prenume = prenume;
-    }
-
-    public long getCnp() {
-        return cnp;
-    }
-
-    public void setCnp(long cnp) {
-        this.cnp = cnp;
-    }
-
-    public String getAdresaDomiciliu() {
-        return adresaDomiciliu;
-    }
-
-    public void setAdresaDomiciliu(String adresaDomiciliu) {
-        this.adresaDomiciliu = adresaDomiciliu;
-    }
-
-    public String getSerieBuletin() {
-        return serieBuletin;
-    }
-
-    public void setSerieBuletin(String serieBuletin) {
-        this.serieBuletin = serieBuletin;
-    }
-
-    public int getNumarBuletin() {
-        return numarBuletin;
-    }
-
-    public void setNumarBuletin(int numarBuletin) {
-        this.numarBuletin = numarBuletin;
-    }
 }
