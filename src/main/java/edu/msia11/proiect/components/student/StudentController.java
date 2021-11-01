@@ -4,7 +4,6 @@ import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
 import edu.msia11.proiect.components.student.service.StudentDtoService;
-import edu.msia11.proiect.components.student.service.StudentDtoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +21,16 @@ public class StudentController {
     @Autowired
     private StudentDtoService studentService;
 
+    // CRUD - Create, Read, Update, Delete
+
     @GetMapping(value = "/students")
     public ResponseEntity<List<StudentOutputDTO>> getAllStudents() {
         return new ResponseEntity<>(studentService.getAllObjects(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/students", params = {"name"}, produces = "application/json")
+    public ResponseEntity<List<StudentOutputDTO>> getAllStudentsByName(@RequestParam(value = "name") String name) {
+        return new ResponseEntity<>(studentService.getAllObjectsByName(name), HttpStatus.OK);
     }
 
     @PostMapping(value = "/students", consumes = "application/json", produces = "application/json")
