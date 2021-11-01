@@ -1,12 +1,7 @@
 package edu.msia11.proiect.components.student.service;
 
 import edu.msia11.proiect.components.student.StudentEntity;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /* Acest serviciu se ocupa strict de manipularea claselor

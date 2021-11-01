@@ -1,7 +1,6 @@
 package edu.msia11.proiect.components.student.service;
 
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
-import edu.msia11.proiect.components.student.StudentEntity;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.mapping.StudentMapper;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
@@ -11,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

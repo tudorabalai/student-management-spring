@@ -3,9 +3,7 @@ package edu.msia11.proiect.components.student.service;
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /* Acest serviciu se ocupa strict de manipularea claselor
