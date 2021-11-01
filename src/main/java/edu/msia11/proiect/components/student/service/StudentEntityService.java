@@ -17,9 +17,12 @@ public interface StudentEntityService {
 
     List<StudentEntity> getAllEntities();
 
+    List<StudentEntity> getEntityListByName(String name);
+
     StudentEntity getEntityById(Long id);
 
     StudentEntity saveEntity(StudentEntity entity);
 
     void deleteEntityById(Long id);
+
 }

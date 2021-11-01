@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,6 +23,11 @@ public class StudentEntityServiceImpl implements StudentEntityService {
     @Override
     public List<StudentEntity> getAllEntities() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<StudentEntity> getEntityListByName(String name) {
+        return repository.findAllByNumeIgnoreCase(name);
     }
 
     @Override

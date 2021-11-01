@@ -15,6 +15,8 @@ public interface StudentDtoService {
 
     List<StudentOutputDTO> getAllObjects();
 
+    List<StudentOutputDTO> getAllObjectsByName(String name);
+
     StudentOutputDTO getObjectById(Long id);
 
     StudentOutputDTO saveObject(StudentInputDTO input);
@@ -22,4 +24,5 @@ public interface StudentDtoService {
     StudentOutputDTO updateObject(Long id, StudentInputDTO input);
 
     EmptyJsonResponse deleteById(Long id);
+
 }
