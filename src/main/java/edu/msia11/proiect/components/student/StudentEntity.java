@@ -1,11 +1,14 @@
 package edu.msia11.proiect.components.student;
 
+import edu.msia11.proiect.common.model.address.AddressEntity;
+import edu.msia11.proiect.common.model.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 /* Entitatea este reprezentarea unei tabele din baza de date
  * sub forma unei clase Java */
@@ -15,11 +18,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "Student_Entity")
-public class StudentEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class StudentEntity extends BaseEntity {
 
     //    @NonNull
     @Column(name = "CNP")
@@ -40,6 +39,6 @@ public class StudentEntity {
     @Column(name = "Prenume")
     private String prenume;
 
-    @Column(name = "Adresa")
-    private String adresaDomiciliu;
+    @ManyToMany
+    private List<AddressEntity> adresaDomiciliu;
 }
