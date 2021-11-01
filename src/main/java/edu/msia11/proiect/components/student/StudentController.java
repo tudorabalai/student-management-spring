@@ -1,5 +1,7 @@
 package edu.msia11.proiect.components.student;
 
+import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
+import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
 import edu.msia11.proiect.components.student.service.StudentDtoService;
 import edu.msia11.proiect.components.student.service.StudentDtoServiceImpl;
@@ -7,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +25,20 @@ public class StudentController {
     @GetMapping(value = "/students")
     public ResponseEntity<List<StudentOutputDTO>> getAllStudents() {
         return new ResponseEntity<>(studentService.getAllObjects(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/students", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<StudentOutputDTO> saveStudent(@RequestBody StudentInputDTO input) {
+        return new ResponseEntity<>(studentService.saveObject(input), HttpStatus.OK);
+    }
+
+    @PutMapping(value = "/students/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseEntity<StudentOutputDTO> updateStudent(@PathVariable(value = "id") Long id, @RequestBody StudentInputDTO input) {
+        return new ResponseEntity<>(studentService.updateObject(id, input), HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/students/{id}", produces = "application/json")
+    public ResponseEntity<EmptyJsonResponse> deleteStudent(@PathVariable(value = "id") Long id) {
+        return new ResponseEntity<>(studentService.deleteById(id), HttpStatus.OK);
     }
 }

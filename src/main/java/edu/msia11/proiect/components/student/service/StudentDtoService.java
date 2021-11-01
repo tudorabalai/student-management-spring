@@ -1,5 +1,6 @@
 package edu.msia11.proiect.components.student.service;
 
+import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
 import org.springframework.stereotype.Service;
@@ -18,5 +19,7 @@ public interface StudentDtoService {
 
     StudentOutputDTO saveObject(StudentInputDTO input);
 
-    void deleteById(Long id);
+    StudentOutputDTO updateObject(Long id, StudentInputDTO input);
+
+    EmptyJsonResponse deleteById(Long id);
 }
