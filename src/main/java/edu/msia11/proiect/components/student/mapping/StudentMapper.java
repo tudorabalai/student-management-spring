@@ -19,7 +19,8 @@ public interface StudentMapper {
     @Mapping(target = "nrMatricol", source = "entity.numarMatricol", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
     @Mapping(target = "numarCI", source = "entity.numarCarteIdentitate", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
     @Mapping(target = "serieCI", source = "entity.serieCarteIdentitate", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
-    @Mapping(target = "adresaCompleta", source = "entity.adresaDomiciliu", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+//    @Mapping(target = "adresaCompleta", source = "entity.adresaDomiciliu", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+    @Mapping(target = "adresaCompleta", ignore = true)
     StudentOutputDTO entityToOutput(StudentEntity entity);
 
     List<StudentOutputDTO> entityToOutput(List<StudentEntity> entityList);
@@ -30,7 +31,8 @@ public interface StudentMapper {
     @Mapping(target = "numarMatricol", source = "input.nrMatricol", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
     @Mapping(target = "numarCarteIdentitate", source = "input.numarCI", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
     @Mapping(target = "serieCarteIdentitate", source = "input.serieCI", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
-    @Mapping(target = "adresaDomiciliu", source = "input.adresaCompleta", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+//    @Mapping(target = "adresaDomiciliu", source = "input.adresaCompleta", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+    @Mapping(target = "adresaDomiciliu", ignore = true)
     StudentEntity inputToEntity(StudentInputDTO input);
 
     List<StudentEntity> inputToEntity(List<StudentInputDTO> inputList);
@@ -41,6 +43,7 @@ public interface StudentMapper {
     @Mapping(target = "numarMatricol", source = "input.nrMatricol", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "numarCarteIdentitate", source = "input.numarCI", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "serieCarteIdentitate", source = "input.serieCI", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    @Mapping(target = "adresaDomiciliu", source = "input.adresaCompleta", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+//    @Mapping(target = "adresaDomiciliu", source = "input.adresaCompleta", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    @Mapping(target = "adresaDomiciliu", ignore = true)
     StudentEntity updateEntityFromInput(StudentInputDTO input, @MappingTarget StudentEntity entity);
 }
