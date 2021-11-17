@@ -28,6 +28,11 @@ public class StudentController {
         return new ResponseEntity<>(studentService.getAllObjects(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/students/{id}", produces = "application/json")
+    public ResponseEntity<StudentOutputDTO> getStudentById(@PathVariable(value = "id") Long id) {
+        return new ResponseEntity<>(studentService.getObjectById(id), HttpStatus.OK);
+    }
+
     @GetMapping(value = "/students", params = {"name"}, produces = "application/json")
     public ResponseEntity<List<StudentOutputDTO>> getAllStudentsByName(@RequestParam(value = "name") String name) {
         return new ResponseEntity<>(studentService.getAllObjectsByName(name), HttpStatus.OK);

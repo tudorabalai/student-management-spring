@@ -40,6 +40,11 @@ public class StudentEntityServiceImpl implements StudentEntityService {
     }
 
     @Override
+    public Boolean existsByCnp(Long cnp) {
+        return repository.existsByCodNumericPersonal(cnp);
+    }
+
+    @Override
     public void deleteEntityById(Long id) {
         repository.deleteById(id);
     }

@@ -1,6 +1,6 @@
 package edu.msia11.proiect.components.student;
 
-import edu.msia11.proiect.common.model.address.AddressEntity;
+import edu.msia11.proiect.common.model.address_student.AddressStudentEntity;
 import edu.msia11.proiect.common.model.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,24 +21,28 @@ import java.util.List;
 public class StudentEntity extends BaseEntity {
 
     //    @NonNull
-    @Column(name = "CNP")
-    private Long codNumericPersonal;
-
-    @Column(name = "Numar_CI")
-    private Integer numarCarteIdentitate;
-
-    @Column(name = "Serie_CI")
-    private String serieCarteIdentitate;
+//    @Column(name = "CNP")
+//    private Long codNumericPersonal;
+//
+//    @Column(name = "Numar_CI")
+//    private Integer numarCarteIdentitate;
+//
+//    @Column(name = "Serie_CI")
+//    private String serieCarteIdentitate;
 
     @Column(name = "Matricol")
     private String numarMatricol;
 
-    @Column(name = "Nume")
-    private String nume;
+    private PersonEntity person;
+//    @Column(name = "Nume")
+//    private String nume;
+//
+//    @Column(name = "Prenume")
+//    private String prenume;
 
-    @Column(name = "Prenume")
-    private String prenume;
+    @OneToMany(mappedBy = "student")
+    List<AddressStudentEntity> adresaDomiciliu; // mutata la Person
 
-    @ManyToMany
-    private List<AddressEntity> adresaDomiciliu;
+
+    List<UniversityEntity> universitati;
 }

@@ -18,6 +18,8 @@ public interface StudentEntityService {
 
     StudentEntity saveEntity(StudentEntity entity);
 
+    Boolean existsByCnp(Long cnp);
+
     void deleteEntityById(Long id);
 
 }

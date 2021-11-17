@@ -1,16 +1,13 @@
-package edu.msia11.proiect.common.model.address;
+package edu.msia11.proiect.components.address;
 
+import edu.msia11.proiect.common.model.address_student.AddressStudentEntity;
 import edu.msia11.proiect.common.model.base.BaseEntity;
-import edu.msia11.proiect.components.student.StudentEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -30,6 +27,6 @@ public class AddressEntity extends BaseEntity {
     @Column(name = "Cod_Postal")
     private Integer codPostal;
 
-    @ManyToMany
-    private List<StudentEntity> students;
+    @OneToMany(mappedBy = "address")
+    private List<AddressStudentEntity> address;
 }

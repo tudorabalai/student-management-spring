@@ -3,7 +3,11 @@ package edu.msia11.proiect.components.student.mapping;
 import edu.msia11.proiect.components.student.StudentEntity;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
+import org.mapstruct.MappingTarget;
+import org.mapstruct.NullValueCheckStrategy;
+import org.mapstruct.NullValuePropertyMappingStrategy;
 
 import java.util.List;
 
@@ -46,4 +50,6 @@ public interface StudentMapper {
 //    @Mapping(target = "adresaDomiciliu", source = "input.adresaCompleta", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(target = "adresaDomiciliu", ignore = true)
     StudentEntity updateEntityFromInput(StudentInputDTO input, @MappingTarget StudentEntity entity);
+
+    List<StudentEntity> updateEntityFromInput(List<StudentInputDTO> input, @MappingTarget List<StudentEntity> entity);
 }
