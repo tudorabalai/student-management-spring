@@ -2,6 +2,7 @@ package edu.msia11.proiect.components.student;
 
 import edu.msia11.proiect.common.model.address_student.AddressStudentEntity;
 import edu.msia11.proiect.common.model.base.BaseEntity;
+import edu.msia11.proiect.components.Person.PersonEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,6 +33,7 @@ public class StudentEntity extends BaseEntity {
 
     @Column(name = "Matricol")
     private String numarMatricol;
+
 
     private PersonEntity person;
 //    @Column(name = "Nume")
