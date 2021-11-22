@@ -23,13 +23,13 @@ public class AddressPersonEntityServiceImpl implements AddressPersonEntityServic
     }
 
     @Override
-    public AddressPersonEntity getAddressPersonEntityById(Long addressId, Long studentId) {
-        return getAddressPersonEntityById(new AddressPersonKey(addressId, studentId));
+    public AddressPersonEntity getAddressPersonEntityById(Long addressId, Long personId) {
+        return getAddressPersonEntityById(new AddressPersonKey(addressId, personId));
     }
 
     @Override
-    public List<AddressPersonEntity> getAllAddressPersonEntitiesByPersonId(Long studentId) {
-        return repository.findDistinctById_StudentId(studentId);
+    public List<AddressPersonEntity> getAllAddressPersonEntitiesByPersonId(Long personId) {
+        return repository.findDistinctById_PersonId(personId);
     }
 
     @Override
@@ -38,14 +38,14 @@ public class AddressPersonEntityServiceImpl implements AddressPersonEntityServic
     }
 
     @Override
-    public AddressPersonEntity assignAddressToPerson(Long addressId, Long studentId) {
-        var id = new AddressPersonKey(addressId, studentId);
+    public AddressPersonEntity assignAddressToPerson(Long addressId, Long personId) {
+        var id = new AddressPersonKey(addressId, personId);
         var entity = AddressPersonEntity.builder().id(id).build();
         return repository.save(entity);
     }
 
     @Override
-    public void deleteAddressToPerson(Long addressId, Long studentId) {
-        repository.deleteById(new AddressPersonKey(addressId, studentId));
+    public void deleteAddressToPerson(Long addressId, Long personId) {
+        repository.deleteById(new AddressPersonKey(addressId, personId));
     }
 }

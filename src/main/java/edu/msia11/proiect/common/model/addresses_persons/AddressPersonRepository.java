@@ -10,7 +10,7 @@ import java.util.List;
 @Transactional
 public interface AddressPersonRepository extends JpaRepository<AddressPersonEntity, AddressPersonKey> {
 
-    List<AddressPersonEntity> findDistinctById_StudentId(Long studentId);
+    List<AddressPersonEntity> findDistinctById_PersonId(Long personId);
 
     List<AddressPersonEntity> findDistinctById_AddressId(Long addressId);
 }

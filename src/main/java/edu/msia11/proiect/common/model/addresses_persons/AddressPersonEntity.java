@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "address_person")//, uniqueConstraints = {"student_id", "address_id"})
+@Table(name = "Address_Person")//, uniqueConstraints = {"student_id", "address_id"})
 public class AddressPersonEntity {
 
     @EmbeddedId
