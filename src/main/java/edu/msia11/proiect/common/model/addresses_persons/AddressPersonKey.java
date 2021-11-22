@@ -1,4 +1,4 @@
-package edu.msia11.proiect.common.model.address_student;
+package edu.msia11.proiect.common.model.addresses_persons;
 
 import lombok.*;
 
@@ -13,11 +13,11 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressStudentKey implements Serializable {
+public class AddressPersonKey implements Serializable {
 
-    @Column(name = "address_id")
+    @Column(name = "Address_Id")
     Long addressId;
 
-    @Column(name = "student_id")
-    Long studentId;
+    @Column(name = "Student_Id")
+    Long personId;
 }

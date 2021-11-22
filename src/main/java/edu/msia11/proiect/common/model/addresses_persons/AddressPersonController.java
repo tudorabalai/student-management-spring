@@ -1,4 +1,4 @@
-package edu.msia11.proiect.common.model.address_student;
+package edu.msia11.proiect.common.model.addresses_persons;
 
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,21 +12,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value = "/api/v1")
-public class AddressStudentController {
+public class AddressPersonController {
     @Autowired
-    private AddressStudentEntityService service;
+    private AddressPersonEntityService service;
 
-    @PostMapping(value = "/address-student", produces = "application/json", params = {"addressId", "studentId"})
-    public ResponseEntity<EmptyJsonResponse> assignAddressToStudent(@RequestParam(value = "addressId") Long addressId,
-                                                                    @RequestParam(value = "studentId") Long studentId) {
-        service.assignAddressToStudent(addressId, studentId);
+    @PostMapping(value = "/address-person", produces = "application/json", params = {"addressId", "personId"})
+    public ResponseEntity<EmptyJsonResponse> assignAddressToPerson(@RequestParam(value = "addressId") Long addressId,
+                                                                   @RequestParam(value = "personId") Long personId) {
+        service.assignAddressToPerson(addressId, personId);
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/address-student", produces = "application/json", params = {"addressId", "studentId"})
+    @DeleteMapping(value = "/address-person", produces = "application/json", params = {"addressId", "personId"})
     public ResponseEntity<EmptyJsonResponse> deleteAddressToStudent(@RequestParam(value = "addressId") Long addressId,
-                                                                    @RequestParam(value = "studentId") Long studentId) {
-        service.deleteAddressToStudent(addressId, studentId);
+                                                                    @RequestParam(value = "personId") Long personId) {
+        service.deleteAddressToPerson(addressId, personId);
         return new ResponseEntity<>(new EmptyJsonResponse(), HttpStatus.OK);
     }
 }
