@@ -26,7 +26,7 @@ public class StudentEntityServiceImpl implements StudentEntityService {
 
     @Override
     public List<StudentEntity> getEntityListByName(String name) {
-        return repository.findAllByNumeIgnoreCase(name);
+        return repository.findAllByPerson_NumeIgnoreCase(name);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class StudentEntityServiceImpl implements StudentEntityService {
 
     @Override
     public Boolean existsByCnp(Long cnp) {
-        return repository.existsByCodNumericPersonal(cnp);
+        return repository.existsByPerson_CodNumericPersonal(cnp);
     }
 
     @Override
