@@ -10,4 +10,9 @@ class StudentManagementSystemApplicationTests {
 	void contextLoads() {
 	}
 
+//	@Test
+//	void x() throws MalformedURLException {
+//		URL url = new URL ("https://localhost:8081/api/v1/");
+//	}
+
 }
