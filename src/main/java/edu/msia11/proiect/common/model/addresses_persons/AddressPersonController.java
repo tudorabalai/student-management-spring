@@ -1,5 +1,6 @@
 package edu.msia11.proiect.common.model.addresses_persons;
 
+import edu.msia11.proiect.common.model.addresses_persons.service.AddressPersonEntityService;
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

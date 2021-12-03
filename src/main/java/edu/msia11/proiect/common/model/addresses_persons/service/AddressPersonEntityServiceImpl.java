@@ -1,5 +1,8 @@
-package edu.msia11.proiect.common.model.addresses_persons;
+package edu.msia11.proiect.common.model.addresses_persons.service;
 
+import edu.msia11.proiect.common.model.addresses_persons.AddressPersonEntity;
+import edu.msia11.proiect.common.model.addresses_persons.AddressPersonKey;
+import edu.msia11.proiect.common.model.addresses_persons.AddressPersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
