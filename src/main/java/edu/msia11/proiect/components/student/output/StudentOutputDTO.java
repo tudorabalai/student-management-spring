@@ -5,8 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/* Aceasta clasa DTO (Data Transfer Object) o vei folosi
- * ca model pentru output (cand vrei sa afisezi un anumit student) */
+/* Aceasta clasa DTO (Data Transfer Object) o vom folosi
+ * ca model pentru output (cand vrem sa afisam un anumit student) */
 @Data
 @Builder
 @NoArgsConstructor
