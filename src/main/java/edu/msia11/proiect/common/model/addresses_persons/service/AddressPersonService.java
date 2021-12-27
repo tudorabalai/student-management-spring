@@ -5,7 +5,7 @@ import edu.msia11.proiect.common.model.addresses_persons.AddressPersonKey;
 
 import java.util.List;
 
-public interface AddressPersonEntityService {
+public interface AddressPersonService {
     List<AddressPersonEntity> getAllAddressPersonEntities();
 
     AddressPersonEntity getAddressPersonEntityById(AddressPersonKey id);

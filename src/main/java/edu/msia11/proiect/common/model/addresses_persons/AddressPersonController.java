@@ -1,6 +1,6 @@
 package edu.msia11.proiect.common.model.addresses_persons;
 
-import edu.msia11.proiect.common.model.addresses_persons.service.AddressPersonEntityService;
+import edu.msia11.proiect.common.model.addresses_persons.service.AddressPersonService;
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(value = "/api/v1")
 public class AddressPersonController {
     @Autowired
-    private AddressPersonEntityService service;
+    private AddressPersonService service;
 
     @PostMapping(value = "/address-person", produces = "application/json", params = {"addressId", "personId"})
     public ResponseEntity<EmptyJsonResponse> assignAddressToPerson(@RequestParam(value = "addressId") Long addressId,

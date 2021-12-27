@@ -3,7 +3,7 @@ package edu.msia11.proiect.components.student;
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
-import edu.msia11.proiect.components.student.service.StudentDtoService;
+import edu.msia11.proiect.components.student.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ import java.util.List;
 public class StudentController {
 
     @Autowired
-    private StudentDtoService studentService;
+    private StudentService studentService;
 
     // CRUD - Create, Read, Update, Delete
 

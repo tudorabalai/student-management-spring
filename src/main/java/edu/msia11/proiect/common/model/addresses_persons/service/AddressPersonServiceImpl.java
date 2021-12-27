@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class AddressPersonEntityServiceImpl implements AddressPersonEntityService {
+public class AddressPersonServiceImpl implements AddressPersonService {
     @Autowired
     private AddressPersonRepository repository;
 

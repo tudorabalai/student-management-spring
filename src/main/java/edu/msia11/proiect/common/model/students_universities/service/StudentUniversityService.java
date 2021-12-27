@@ -5,7 +5,7 @@ import edu.msia11.proiect.common.model.students_universities.StudentUniversityKe
 
 import java.util.List;
 
-public interface StudentUniversityEntityService {
+public interface StudentUniversityService {
 
     List<StudentUniversityEntity> getAllStudentUniversityEntities();
 

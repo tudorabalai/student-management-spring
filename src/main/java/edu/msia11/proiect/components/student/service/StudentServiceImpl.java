@@ -1,6 +1,7 @@
 package edu.msia11.proiect.components.student.service;
 
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
+import edu.msia11.proiect.components.student.StudentRepository;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.mapping.StudentMapper;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
@@ -16,42 +17,42 @@ import java.util.List;
 @Transactional
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentDtoServiceImpl implements StudentDtoService {
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    private StudentEntityService entityService;
+    private StudentRepository studentRepository;
 
     @Autowired
     private StudentMapper mapper;
 
     @Override
     public List<StudentOutputDTO> getAllObjects() {
-        return mapper.entityToOutput(entityService.getAllEntities());
+        return mapper.entityToOutput(studentRepository.findAll());
     }
 
     @Override
     public List<StudentOutputDTO> getAllObjectsByName(String name) {
-        return mapper.entityToOutput(entityService.getEntityListByName(name));
+        return mapper.entityToOutput(studentRepository.findAllByPerson_NumeIgnoreCase(name));
     }
 
     @Override
     public StudentOutputDTO getObjectById(Long id) {
-        return mapper.entityToOutput(entityService.getEntityById(id));
+        return mapper.entityToOutput(studentRepository.getById(id));
     }
 
     @Override
     public StudentOutputDTO saveObject(StudentInputDTO input) {
-        return mapper.entityToOutput(entityService.saveEntity(mapper.inputToEntity(input)));
+        return mapper.entityToOutput(studentRepository.save(mapper.inputToEntity(input)));
     }
 
     @Override
     public StudentOutputDTO updateObject(Long id, StudentInputDTO input) {
-        return mapper.entityToOutput(entityService.saveEntity(mapper.updateEntityFromInput(input, entityService.getEntityById(id))));
+        return mapper.entityToOutput(studentRepository.save(mapper.updateEntityFromInput(input, studentRepository.getById(id))));
     }
 
     @Override
     public EmptyJsonResponse deleteById(Long id) {
-        entityService.deleteEntityById(id);
+        studentRepository.deleteById(id);
         return new EmptyJsonResponse();
     }
 }

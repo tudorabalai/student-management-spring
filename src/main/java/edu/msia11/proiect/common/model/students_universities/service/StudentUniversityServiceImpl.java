@@ -3,17 +3,15 @@ package edu.msia11.proiect.common.model.students_universities.service;
 import edu.msia11.proiect.common.model.students_universities.StudentUniversityEntity;
 import edu.msia11.proiect.common.model.students_universities.StudentUniversityKey;
 import edu.msia11.proiect.common.model.students_universities.StudentUniversityRepository;
-import edu.msia11.proiect.exception.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Transactional
-public class StudentUniversityEntityServiceImpl implements StudentUniversityEntityService {
+public class StudentUniversityServiceImpl implements StudentUniversityService {
 
     @Autowired
     private StudentUniversityRepository repository;
