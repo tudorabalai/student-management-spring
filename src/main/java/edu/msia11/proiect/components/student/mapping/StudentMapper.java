@@ -30,7 +30,7 @@ public interface StudentMapper {
 
     List<StudentOutputDTO> entityToOutput(List<StudentEntity> entityList);
 
-//    @Mapping(target = "nume", source = "input.nume", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
+//    @Mapping(target = "name", source = "input.name", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
 //    @Mapping(target = "prenume", source = "input.prenume", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
 //    @Mapping(target = "codNumericPersonal", source = "input.cnp", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
 //    @Mapping(target = "numarMatricol", source = "input.nrMatricol", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_DEFAULT)
@@ -42,7 +42,7 @@ public interface StudentMapper {
 
     List<StudentEntity> inputToEntity(List<StudentInputDTO> inputList);
 
-//    @Mapping(target = "nume", source = "input.nume", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+//    @Mapping(target = "name", source = "input.name", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 //    @Mapping(target = "prenume", source = "input.prenume", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 //    @Mapping(target = "codNumericPersonal", source = "input.cnp", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 //    @Mapping(target = "numarMatricol", source = "input.nrMatricol", nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

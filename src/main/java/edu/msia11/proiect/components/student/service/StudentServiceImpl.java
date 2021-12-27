@@ -5,7 +5,6 @@ import edu.msia11.proiect.components.student.StudentRepository;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import edu.msia11.proiect.components.student.mapping.StudentMapper;
 import edu.msia11.proiect.components.student.output.StudentOutputDTO;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,6 @@ import java.util.List;
 @Service
 @Transactional
 @NoArgsConstructor
-@AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
 
     @Autowired

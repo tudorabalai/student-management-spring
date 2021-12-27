@@ -9,7 +9,6 @@ import java.util.List;
 /* Repository-ul este partea care te ajuta sa NU scrii SQL.
 * Aici se petrece magia.*/
 @Repository
-@Transactional
 public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
     List<StudentEntity> findAllByPerson_NumeIgnoreCase(String name);
 
