@@ -5,6 +5,7 @@ import edu.msia11.proiect.components.University.UniversityRepository;
 import edu.msia11.proiect.components.University.input.UniversityInputDTO;
 import edu.msia11.proiect.components.University.mapping.UniversityMapper;
 import edu.msia11.proiect.components.University.output.UniversityOutputDTO;
+import edu.msia11.proiect.components.student.input.StudentInputDTO;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +40,7 @@ public class UniversityServiceImpl implements UniversityService {
     }
 
     @Override
-    public UniversityOutputDTO saveObject(UniversityInputDTO input) {
+    public UniversityOutputDTO saveObject(StudentInputDTO input) {
         return null;
     }
 

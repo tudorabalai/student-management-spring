@@ -5,7 +5,6 @@ import edu.msia11.proiect.components.University.input.UniversityInputDTO;
 import edu.msia11.proiect.components.University.output.UniversityOutputDTO;
 import edu.msia11.proiect.components.University.service.UniversityService;
 import edu.msia11.proiect.components.student.input.StudentInputDTO;
-import edu.msia11.proiect.components.student.output.StudentOutputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,16 +33,16 @@ public class UniversityController {
     }
     @GetMapping(value = "/universities/{id}", produces = "application/json")
     public ResponseEntity<UniversityOutputDTO> getUniversityById(@PathVariable(value = "id") Long id) {
-       return new ResponseEntity<> (UniversityService.getObjectById(id), HttpStatus.OK);
+       return new ResponseEntity<>(UniversityService.getObjectById(id), HttpStatus.OK);
     }
     @GetMapping(value = "/universities", params = {"name"}, produces = "application/json")
-    public  ResponseEntity<list<StudentOutputDTO>> getAllUniversitiesByName(@RequestParam(value = "name") String name) {
-        return new ResponseEntity <> (universityService.getAllObjectsByName(name), HttpStatus.OK);
+    public  ResponseEntity<List<UniversityOutputDTO>> getAllUniversitiesByName(@RequestParam(value = "name") String name) {
+        return new ResponseEntity<>(universityService.getAllObjectsByName(name), HttpStatus.OK);
     }
 
     @PostMapping(value = "/universities", consumes = "application/json", produces = "application/json")
     public ResponseEntity<UniversityOutputDTO> saveUniversity(@RequestBody StudentInputDTO input) {
-        return new ResponseEntity<> (universityService.saveObject(input), HttpStatus.OK);
+        return new ResponseEntity<>(universityService.saveObject(input), HttpStatus.OK);
     }
 
     @PutMapping(value = "students/{id}", consumes = "application/json", produces = "application/json")
@@ -52,7 +51,7 @@ public class UniversityController {
     }
 
     @DeleteMapping(value = "/universities/{id}", produces = "application/json")
-    public ResponseEntity<EmptyJsonResponse> deleteUniversity(PathVariable(value = "id") Long id) {
+    public ResponseEntity<EmptyJsonResponse> deleteUniversity(@PathVariable (value = "id") Long id) {
         return new ResponseEntity<> (universityService.deleteById(id), HttpStatus.OK);
     }
 }

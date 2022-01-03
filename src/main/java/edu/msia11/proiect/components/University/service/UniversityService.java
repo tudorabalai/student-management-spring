@@ -3,6 +3,7 @@ package edu.msia11.proiect.components.University.service;
 import edu.msia11.proiect.common.model.empty.EmptyJsonResponse;
 import edu.msia11.proiect.components.University.input.UniversityInputDTO;
 import edu.msia11.proiect.components.University.output.UniversityOutputDTO;
+import edu.msia11.proiect.components.student.input.StudentInputDTO;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface UniversityService {
 
     static UniversityOutputDTO getObjectById(Long Id);
 
-    UniversityOutputDTO saveObject(UniversityInputDTO input);
+    UniversityOutputDTO saveObject(StudentInputDTO input);
 
     static UniversityOutputDTO updateObject(Long id, UniversityInputDTO input);
 
