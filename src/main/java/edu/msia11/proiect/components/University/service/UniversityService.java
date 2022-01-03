@@ -12,11 +12,11 @@ public interface UniversityService {
 
     List<UniversityOutputDTO> getAllObjectsByName(String name);
 
-    UniversityOutputDTO getObjectById(Long Id);
+    static UniversityOutputDTO getObjectById(Long Id);
 
     UniversityOutputDTO saveObject(UniversityInputDTO input);
 
-    UniversityOutputDTO updateObject(Long id, UniversityInputDTO input);
+    static UniversityOutputDTO updateObject(Long id, UniversityInputDTO input);
 
     EmptyJsonResponse deleteById(Long Id);
 }
